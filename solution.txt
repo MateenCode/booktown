@@ -1,0 +1,29 @@
+SELECT * FROM subjects
+
+SELECT * FROM subjects ORDER BY location;
+
+SELECT * FROM books
+
+WHERE title='Little Women';
+
+WHERE title LIKE '%Python';
+
+SELECT * FROM subjects
+WHERE location ='Main St'
+ORDER BY subject;
+
+SELECT books.title
+FROM books INNER JOIN subjects
+ON books.subject_id=subjects.id
+WHERE subjects.subject='Computers';
+
+SELECT books.title, authors.first_name, authors.last_name, subjects.subject 
+FROM books INNER JOIN authors ON books.author_id=authors.id 
+INNER JOIN subjects ON books.subject_id=subjects.id;
+
+SELECT books.title, stock.retail
+FROM books INNER JOIN stock
+ON books.subject_id=stock.stock;
+
+SELECT books.title, stock.retail                                                        FROM books INNER JOIN stock                                                                        ON books.subject_id=stock.stock
+ORDER BY retail DESC;
